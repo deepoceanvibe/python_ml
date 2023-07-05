@@ -1,6 +1,6 @@
 import numpy as np
 
-outlers = np.array([
+outliers_data = np.array([
     -50, -10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 50, 100
 ])
 
@@ -20,11 +20,11 @@ def outliers(data_out):
     print('upper_bound : ', upper_bound)
     return np.where((data_out > upper_bound) | (data_out < lower_bound))
 
-outlers_loc = outliers(outlers)
+outlers_loc = outliers(outliers_data)
 print('이상치의 위치 : ', outlers_loc)
 
 
 # 시각화
 import matplotlib.pyplot as plt
-plt.boxplot(outlers_loc)
+plt.boxplot(outliers_data)
 plt.show()
